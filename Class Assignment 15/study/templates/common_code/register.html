@@ -1,0 +1,40 @@
+{% comment %} {% extends 'common_code/base_code.html' %}
+<title>{% block title %} base code {% endblock title %}</title> {% endcomment %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Login Form</title>
+</head>
+<body>
+
+<div class="container mt-5">
+  <form action="" method="POST" novalidate>
+    {% csrf_token %}
+    {% if form.non_field_errors %}
+    <div class="alert alert-danger">
+      {% for error in form.non_field_errors %}
+      <p>{{ error }}</p>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% for lfrm in form %}
+    <div class="mb-3">
+      <label for="{{ lfrm.id_for_label }}" class="form-label">{{ lfrm.label_tag }}</label>
+      {{ lfrm|add_class('form-control') }}
+      <div class="invalid-feedback">
+        {{ lfrm.errors|striptags }}
+      </div>
+    </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

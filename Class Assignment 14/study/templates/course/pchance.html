@@ -1,0 +1,13 @@
+<form action="" method="POST" novalidate>
+    {% csrf_token %}
+    {% if form.non_field_errors %}
+    {% for error in form.non_field_errors %}
+    <p>{{error}}</p>
+    {% endfor %}
+    {% endif %}
+    {% for lfrm in form %}
+    {{lfrm.label_tag}}{{lfrm}}{{lfrm.errors|striptags}} <br><br>
+    {% endfor %}
+    <input type="submit" value="Save">
+    <a href="{% url 'logout' %}">Logout</a>
+</form>

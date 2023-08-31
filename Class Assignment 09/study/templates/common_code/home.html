@@ -1,0 +1,245 @@
+
+{% extends 'common_code/base_code.html' %}
+{% block title %} Home {% endblock title %}
+{% load static %}
+{% block content %}
+<div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'images/1.jpg' %}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/2.jpg' %}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/3.jpg' %}" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<main class="flex-center products-items">
+  <div class="sideber product-sideber">
+    <section class="catagories-section">
+      <h3 class="section-tittel">Catagoris</h3>
+      <ul>
+        <li class="list-item">
+          <label for="phone">
+            <input type="checkbox" name="phone" id="phone" value="phone"/>  Phone
+          </label>
+        </li>
+        <li class="list-item">
+          <label for="tablet">
+            <input type="checkbox" name="tablet" id="tablet" value="tablet"/>  tablet
+          </label>
+        </li>
+        <li class="list-item">
+          <label for="computer">
+            <input type="checkbox" name="computer" id="computer" value="computer"/>  Computer
+          </label>
+        </li>
+        <li class="list-item">
+          <label for="televisions">
+            <input type="checkbox" name="telivisions" id="telivisions" value="telivisions"/>  Telivisions
+          </label>
+        </li>
+        <li class="list-item">
+          <label for="headphone">
+            <input type="checkbox" name="headphone" id="headphone" value="headphone"/>  Headphone
+          </label>
+        </li>
+      </ul>
+    </section>
+    <section class="price-section">
+      <h3 class="section-tittel">Price</h3>
+      <ul>
+        <li class="list-item">
+          <label for="price1">
+            <input type="radio" name="price1" id="price1" value="[0,20]"/>  $0-20
+          </label>
+        </li>
+        <li class="list-item">
+          <label for="price2">
+            <input type="radio" name="price2" id="price2" value="[21,50]"/>  $21-50
+          </label>
+        </li>
+        <li class="list-item">
+          <label for="price3">
+            <input type="radio" name="price3" id="price3" value="[51,100]"/>  $51-100
+          </label>
+        </li>
+        <li class="list-item">
+          <label for="price4">
+            <input type="radio" name="price4" id="price4" value="[101,500]"/>  $101-500
+          </label>
+        </li>
+        <li class="list-item">
+          <label for="price5">
+            <input type="radio" name="price5" id="price5" value="[501,1000]"/>  $501-1000
+          </label>
+        </li>
+     
+      </ul>
+    </section>
+    <section class="shipping-section">
+      <h3 class="section-tittel">Shipping Option</h3>
+      <ul>
+        <li class="list-item">
+          <label for="free">
+            <input type="radio" name="shipping" id="free" value="free"/>  Free
+          </label>
+        </li>
+        <li class="list-item">
+          <label for="paid">
+            <input type="radio" name="shipping" id="paid" value="paid"/>  Paid
+          </label>
+        </li>
+      </ul>
+    </section>
+  </div>
+  <div class="main-content">
+    <section class="flex-space-around">
+      <div class="action__sort">
+        <label for="sort">Sort By:</label>
+        <select name="sort" id="sort">
+          <option value="sold">Most sold fist</option>
+          <option value="rating">Most rated fist</option>
+          <option value="price">Chapest fist</option>
+          <option value="arrival">Newest fist</option>
+          <option value="discount">Biggest discount fist</option>
+          <option value="low_price">Loweer price</option>
+        </select>
+      </div>
+      <div class="action_search">
+        <input type="text" placeholder="Search Products">
+        <button class="btn">
+          <i class="fa-sharp fa-solid fa-magnifying-glass">Sent</i>
+        </button>
+      </div>
+    </section>
+
+    <!-- products section starts here-->
+    <section class="products">
+      <articale class="product card">
+        <div class="badge">
+          <span>5 in stock</span>
+          <hr class="hr-design"/>
+          <span>3 sold</span>
+        </div>
+        <div class="product-img"><img src="{%static 'images/headphone.jpg' %}" alt="product"></div>
+        <div class="product_body">
+          <h3 class="product_name">Sony V-4 Headphone</h3>
+          <p>
+            <span class="dot green"></span>
+            <span class="dot black"></span>
+            <span class="dot red"></span>
+          </p>
+          <p class="product_description">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore dolore beatae est doloremque sequi, nam commodi...<a href="product.html" class="learn_more">Learn More</a>
+          </p>
+          <h4 class="product_price">$4.50</h4>
+          <p class="product_rating">Rating 4.5/7</p>
+          <button btn product_button>Add to Cart</button>
+        </div>
+      </articale>
+
+      <articale class="product card">
+        <div class="badge">
+          <span>5 in stock</span>
+          <hr class="hr-design"/>
+          <span>3 sold</span>
+        </div>
+        <div class="product-img"><img src="{%static 'images/headphone.jpg' %}" alt="product"></div>
+        <div class="product_body">
+          <h3 class="product_name">Sony V-4 Headphone</h3>
+          <p>
+            <span class="dot green"></span>
+            <span class="dot black"></span>
+            <span class="dot red"></span>
+          </p>
+          <p class="product_description">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore dolore beatae est doloremque sequi, nam commodi...<a href="product.html" class="learn_more">Learn More</a>
+          </p>
+          <h4 class="product_price">$4.50</h4>
+          <p class="product_rating">Rating 4.5/7</p>
+          <button btn product_button>Add to Cart</button>
+        </div>
+      </articale>
+      <articale class="product card">
+        <div class="badge">
+          <span>5 in stock</span>
+          <hr class="hr-design"/>
+          <span>3 sold</span>
+        </div>
+        <div class="product-img"><img src="{%static 'images/headphone.jpg' %}" alt="product"></div>
+        <div class="product_body">
+          <h3 class="product_name">Sony V-4 Headphone</h3>
+          <p>
+            <span class="dot green"></span>
+            <span class="dot black"></span>
+            <span class="dot red"></span>
+          </p>
+          <p class="product_description">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore dolore beatae est doloremque sequi, nam commodi...<a href="product.html" class="learn_more">Learn More</a>
+          </p>
+          <h4 class="product_price">$4.50</h4>
+          <p class="product_rating">Rating 4.5/7</p>
+          <button btn product_button>Add to Cart</button>
+        </div>
+      </articale>
+      <articale class="product card">
+        <div class="badge">
+          <span>5 in stock</span>
+          <hr class="hr-design"/>
+          <span>3 sold</span>
+        </div>
+        <div class="product-img"><img src="{%static 'images/headphone.jpg' %}" alt="product"></div>
+        <div class="product_body">
+          <h3 class="product_name">Sony V-4 Headphone</h3>
+          <p>
+            <span class="dot green"></span>
+            <span class="dot black"></span>
+            <span class="dot red"></span>
+          </p>
+          <p class="product_description">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore dolore beatae est doloremque sequi, nam commodi...<a href="product.html" class="learn_more">Learn More</a>
+          </p>
+          <h4 class="product_price">$4.50</h4>
+          <p class="product_rating">Rating 4.5/7</p>
+          <button btn product_button>Add to Cart</button>
+        </div>
+      </articale>
+      <articale class="product card">
+        <div class="badge">
+          <span>5 in stock</span>
+          <hr class="hr-design"/>
+          <span>3 sold</span>
+        </div>
+        <div class="product-img"><img src="{%static 'images/headphone.jpg' %}" alt="product"></div>
+        <div class="product_body">
+          <h3 class="product_name">Sony V-4 Headphone</h3>
+          <p>
+            <span class="dot green"></span>
+            <span class="dot black"></span>
+            <span class="dot red"></span>
+          </p>
+          <p class="product_description">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore dolore beatae est doloremque sequi, nam commodi...<a href="product.html" class="learn_more">Learn More</a>
+          </p>
+          <h4 class="product_price">$4.50</h4>
+          <p class="product_rating">Rating 4.5/7</p>
+          <button btn product_button>Add to Cart</button>
+        </div>
+      </articale>
+    </section>
+    <!-- products section ends here -->
+  </div>
+</main>
+
+{% endblock content %}

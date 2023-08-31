@@ -1,0 +1,9 @@
+{% load static %}
+<form action="" method="POST" novalidate >
+    {% comment %} <h1>Fillup the requerment</h1> {% endcomment %}
+    {% csrf_token %}
+    {% for fm in form %}
+    {{fm.label_tag}}{{fm}}{{fm.errors|striptags}} <br><br>
+    {% endfor %}
+    <input type="submit" value="submit">
+</form>

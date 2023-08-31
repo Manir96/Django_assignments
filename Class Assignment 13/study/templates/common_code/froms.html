@@ -1,0 +1,26 @@
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/form.css' %}">
+{% endblock css %}
+
+{% block content %}
+{% comment %} <form action="" enctype="multipart/form-data">
+    {% for field in form.visible_fields %}
+    {{field.label_tag}}
+    {{field}}
+    {% endfor %}
+
+    {% for field in form.hidden_fields %}
+    {{hidden}}
+    {% endfor %}
+    <input type="submit" value="submit">
+</form> {% endcomment %}
+
+<form action="" method="POST" novalidate id="frm">
+    <h1>Fill up the field</h1>
+    {% csrf_token %}
+    {{ froms.as_p }}
+    <input type="submit" value="submit">
+</form>
+
+{% endblock content %}

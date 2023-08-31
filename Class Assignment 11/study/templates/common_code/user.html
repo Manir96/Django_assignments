@@ -1,0 +1,23 @@
+{{user}}
+{% if user %}
+<table border='2px'>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>email</th>
+        <th>batch</th>
+        <th>course</th>
+    </tr>
+    {% for s in user %}
+    <tr>
+        <td>{{s.id}}</td>
+        <td>{{s.name}}</td>
+        <td>{{s.email}}</td>
+        <td>{{s.batch}}</td>
+        <td>{{s.course}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<h1>Emtry Data</h1>
+{% endif %}

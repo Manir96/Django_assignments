@@ -1,0 +1,53 @@
+
+{% extends 'common_code/base_code.html' %}
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="card p-4 shadow bg-dark" style="width: 500px;">
+    <h2 class="text-center mb-4 text-white">Please Fill Up the Form</h2>
+    <form action="" method="POST" novalidate>
+      {% csrf_token %}
+
+      <div class="mb-3">
+        <input type="text" name="{{ form.first_name.name }}" placeholder="First Name" class="form-control">
+      </div>
+
+      <div class="mb-3">
+        <label for="{{ form.first_name.id_for_label }}" class="form-label">First Name</label>
+        {{ form.first_name }}
+      </div>
+
+
+
+      <div class="mb-3">
+        <input type="text" name="{{ form.last_name.name }}" placeholder="Last Name" class="form-control">
+      </div>
+      <div class="mb-3">
+        <input type="text" name="{{ form.email.name }}" placeholder="Email" class="form-control">
+      </div>
+      <div class="mb-3">
+        <input type="Number" name="{{ form.batch.name }}" placeholder="Batch" class="form-control">
+      </div>
+      <div class="mb-3">
+        <input type="Number" name="{{ form.mobile_number.name }}" placeholder="Phone Number" class="form-control">
+      </div>
+      <div class="mb-3">
+        <input type="Password" name="{{ form.password.name }}" placeholder="Password" class="form-control">
+      </div>
+      <div class="mb-3">
+        <input type="password" name="{{ form.re_password.name }}" placeholder="Re Password" class="form-control">
+        {% for error in form.re_password.errors %}
+          <small class="text-danger">{{ error }}</small><br>
+        {% endfor %}
+      </div>
+      <div class="mb-3">
+        <input type="Number" name="{{ form.amount.name }}" placeholder="Course Fee" class="form-control">
+      </div>
+      <div class="mb-3 text-center">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock content %}
+

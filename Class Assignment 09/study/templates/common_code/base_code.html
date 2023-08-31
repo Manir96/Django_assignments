@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %} {% endblock title %}</title>
+  <!-- font awesome -->
+  <link rel="stylesheet" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' %}"/>
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  <!--<link rel="stylesheet" href="{% static 'css/index.css' %}">-->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  
+  
+</head>
+<body>
+
+  <!-- <div class="logo">
+    <img src="images/1.png" alt="logo">
+  </div> -->
+  <!-- nav ber start here -->
+  <i class="fas fa-bars fa-2x" id="menu-icon"></i>
+  <nav id="menu" class="hidden">
+    <ul class="nav-upper flex-space-around">
+      <li class="logo"><img src="" alt="logo"></li>
+      <li class="nav-list">
+        <a href="{% url 'hm' %}" class="nav-link">Home</a>
+      </li>
+      <li class="nav-list">
+        <a href="{% url 'rg' %}" class="nav-link">Register</a>
+      </li>
+      <li class="nav-list">
+        <a href="{% url 'lg' %}" class="nav-link">Login</a>
+      </li>
+      <li class="nav-list">
+        <a href="{% url 'pl' %}" class="nav-link">Programing Language</a>
+      </li>
+      <li class="nav-list">
+        <a href="{% url 'ct' %}" class="nav-link">Contact</a>
+      </li>
+      <li class="nav-list">
+        <img src="{% static 'images/im.png' %}" class="profile-icon" alt="profile">
+      </li>
+    </ul>
+    <ul class="nav-lower flex-space-around">
+      <!-- <li class="logo"><img src="images/1.png" alt="logo"></li> -->
+      <li class="nav-list">
+        <a href="index.html" class="nav-link nav-brand">E-Commarce</a>
+      </li>
+      <li class="nav-list">
+        <a href="card.html" class="nave-link">
+        <span class="card_navber">
+          <i class="fa-solid fa-cart-shopping"></i>
+          cart 2 products - $240.50
+        </span></a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- nav ber end here -->
+  
+  {% block content %}
+  
+  {% endblock content %}
+
+  <!-- footer start here -->
+
+  <footer>
+    <div class="container">
+        <div class="row">
+              <div class="col" id="company">
+                  <!-- <img src="images/logo.png" alt="" class="logo"> -->
+                  <p>
+                    We are specialized in Web Developer, make your business a E-Commerce Weebsite.
+                    Try our premium services.
+                  </p>
+                  <div class="social">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                  </div>
+              </div>
+
+
+              <div class="col" id="services">
+                 <h3>Services</h3>
+                 <div class="links">
+                    <a href="#">E-Commerce</a>
+                    <a href="#">Web_Scrape</a>
+                    <a href="#">Data_Analysis</a>
+                    <a href="#">Machine_Learning</a>
+                 </div>
+              </div>
+
+              <div class="col" id="useful-links">
+                 <h3>Links</h3>
+                 <div class="links">
+                    <a href="#">About</a>
+                    <a href="#">Services</a>
+                    <a href="#">Our Policy</a>
+                    <a href="#">Help</a>
+                 </div>
+              </div>
+
+              <div class="col" id="contact">
+                  <h3>Contact</h3>
+                  <div class="contact-details">
+                     <i class="fa fa-location"></i>
+                     <p>Sakhipur, Tangail, Dhaka, BD</p>
+                  </div>
+                  <div class="contact-details">
+                     <i class="fa fa-phone"></i>
+                     <p>+8801720651306</p>
+                  </div>
+              </div>
+        </div>
+
+        <div class="row">
+              <div class="form">
+                <form action="">
+                    <input type="text" placeholder="Email here...">
+                    <button><i class="fa fa-paper-plane">Sent</i></button>
+                </form>
+              </div>
+        </div>
+
+    </div>
+
+
+</footer>
+
+  <!-- footer end here -->
+  <script src="{% static 'js/register.js' %}"></script>
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/index.js' %}"></script>
+</body>
+</html>
